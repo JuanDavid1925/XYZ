@@ -15,7 +15,7 @@ export const featuresData = [
   {
     color: "red",
     title: "Planificación de itinerarios",
-    icon: DocumentCheckIcon,
+    icon: ArrowPathIcon,
     description:
       "Te ayudamos a crear itinerarios detallados para tus viajes. Puedes agregar actividades, atracciones turísticas, restaurantes y otros puntos de interés en tu planificación diaria.",
   },
