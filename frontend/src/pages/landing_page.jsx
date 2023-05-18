@@ -4,15 +4,13 @@ import {
   CardBody,
   CardHeader,
   Typography,
-  Button,
-  IconButton,
-  Input,
-  Textarea,
+
 } from "@material-tailwind/react";
 import { UsersIcon } from "@heroicons/react/24/solid";
 import { PageTitle, Footer } from "../widgets/layout";
 import { FeatureCard, TeamCard } from "../widgets/cards";
-import { featuresData, teamData, contactData } from "../data";
+import { featuresData, teamData } from "../data";
+import Carousel from 'react-bootstrap/Carousel';
 
 export function Landing_page() {
   return (
@@ -63,26 +61,24 @@ export function Landing_page() {
                 className="mb-3 font-bold"
                 color="blue-gray"
               >
-                Working with us is a pleasure
+                Recomendaciones personalizadas
               </Typography>
               <Typography className="mb-8 font-normal text-blue-gray-500">
-                Don't let your uses guess by attaching tooltips and popoves to
-                any element. Just make sure you enable them first via
-                JavaScript.
+                En base a tus preferencias y actividades anteriores,
+                te ofrecemos recomendaciones personalizadas utilizando algoritmos inteligentes.
+                Podemos sugerirte hoteles similares a los que has reservado previamente, restaurantes populares en tu destino o atracciones turísticas que podrían interesarte.
+                Estas recomendaciones te ayudarán a descubrir nuevos lugares y experiencias.
                 <br />
-                <br />
-                The kit comes with three pre-built pages to help you get started
-                faster. You can change the text and images and you're good to
-                go. Just make sure you enable them first via JavaScript.
+
               </Typography>
-              <Button variant="outlined">read more</Button>
+
             </div>
             <div className="mx-auto mt-24 flex w-full justify-center px-4 md:w-4/12 lg:mt-0">
               <Card className="shadow-lg shadow-gray-500/10">
                 <CardHeader className="relative h-56">
                   <img
-                    alt="Card Image"
-                    src="/img/teamwork.jpeg"
+                    alt="info_ia"
+                    src='./ia.jpg'
                     className="h-full w-full"
                   />
                 </CardHeader>
@@ -92,12 +88,10 @@ export function Landing_page() {
                     color="blue-gray"
                     className="mb-3 font-bold"
                   >
-                    Top Notch Services
+                    Análisis desde diferentes enfoques
                   </Typography>
                   <Typography className="font-normal text-blue-gray-500">
-                    The Arctic Ocean freezes every winter and much of the
-                    sea-ice then thaws every summer, and that process will
-                    continue whatever happens.
+                    Nos basamos en el análisis de las preferencias de los usuarios y la búsqueda de patrones similares en otros usuarios para ofrecer recomendaciones relevantes.
                   </Typography>
                 </CardBody>
               </Card>
@@ -107,27 +101,13 @@ export function Landing_page() {
       </section>
       <section className="px-4 pt-20 pb-48">
         <div className="container mx-auto">
-          <PageTitle heading="Here are our heroes">
-            According to the National Oceanic and Atmospheric Administration,
-            Ted, Scambos, NSIDClead scentist, puts the potentially record
-            maximum.
+          <PageTitle heading="Planifica tu viaje con nosotros.">
+            Somos una compañia diseñada para ayudarte a encontrar información sobre hoteles y habitaciones, así como para planificar y organizar tus viajes de manera eficiente.
           </PageTitle>
           <div className="mt-24 grid grid-cols-1 gap-12 gap-x-24 md:grid-cols-2 xl:grid-cols-4">
-            {teamData.map(({ img, name, position, socials }) => (
+            {teamData.map(({ img }) => (
               <TeamCard
-                key={name}
                 img={img}
-                name={name}
-                position={position}
-                socials={
-                  <div className="flex items-center gap-2">
-                    {socials.map(({ color, name }) => (
-                      <IconButton key={name} color={color} variant="text">
-                        <i className={`fa-brands text-lg fa-${name}`} />
-                      </IconButton>
-                    ))}
-                  </div>
-                }
               />
             ))}
           </div>
@@ -135,13 +115,11 @@ export function Landing_page() {
       </section>
       <section className="relative bg-blue-gray-50/50 py-24 px-4">
         <div className="container mx-auto">
-          <PageTitle heading="Build something">
-            Put the potentially record low maximum sea ice extent tihs year down
-            to low ice. According to the National Oceanic and Atmospheric
-            Administration, Ted, Scambos.
+          <PageTitle heading="Entérate de las últimas novedades.">
+            Contamos con una sección de noticias para que estés enterado de las últimas ofertas y no te pierdas la oportunidad de tener tu viaje soñado.
           </PageTitle>
           <div className="mx-auto mt-20 mb-48 grid max-w-5xl grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3">
-            {contactData.map(({ title, icon, description }) => (
+            {/*{contactData.map(({ title, icon, description }) => (
               <Card
                 key={title}
                 color="transparent"
@@ -160,21 +138,35 @@ export function Landing_page() {
                   {description}
                 </Typography>
               </Card>
-            ))}
+            ))}*/}
+
+            <Carousel>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src="holder.js/800x400?text=First slide&bg=373940"
+                  alt="First slide"
+                />
+                <Carousel.Caption>
+                  <h3>First slide label</h3>
+                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src="holder.js/800x400?text=Second slide&bg=282c34"
+                  alt="Second slide"
+                />
+
+                <Carousel.Caption>
+                  <h3>Second slide label</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+            </Carousel>
           </div>
-          <PageTitle heading="Want to work with us?">
-            Complete this form and we will get back to you in 24 hours.
-          </PageTitle>
-          <form className="mx-auto mt-12 max-w-3xl text-center">
-            <div className="mb-8 flex gap-8">
-              <Input variant="standard" size="lg" label="Full Name" />
-              <Input variant="standard" size="lg" label="Email Address" />
-            </div>
-            <Textarea variant="standard" size="lg" label="Message" rows={8} />
-            <Button variant="gradient" size="lg" className="mt-8">
-              Send Message
-            </Button>
-          </form>
+
         </div>
       </section>
       <div className="bg-blue-gray-50/50">

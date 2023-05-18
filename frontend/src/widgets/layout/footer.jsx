@@ -3,7 +3,7 @@ import { Typography, IconButton } from "@material-tailwind/react";
 
 const year = new Date().getFullYear();
 
-export function Footer({ title, description, socials, menus, copyright }) {
+export function Footer({ title, description, socials, copyright }) {
   return (
     <footer className="relative px-4 pt-8 pb-6">
       <div className="container mx-auto">
@@ -32,6 +32,7 @@ export function Footer({ title, description, socials, menus, copyright }) {
               ))}
             </div>
           </div>
+          {/*
           <div className="mx-auto mt-12 grid w-max grid-cols-2 gap-24 lg:mt-0">
             {menus.map(({ name, items }) => (
               <div key={name}>
@@ -60,7 +61,7 @@ export function Footer({ title, description, socials, menus, copyright }) {
                 </ul>
               </div>
             ))}
-          </div>
+                  </div>*/}
         </div>
         <hr className="my-6 border-gray-300" />
         <div className="flex flex-wrap items-center justify-center md:justify-between">
@@ -79,9 +80,9 @@ export function Footer({ title, description, socials, menus, copyright }) {
 }
 
 Footer.defaultProps = {
-  title: "Material Tailwind",
+  title: "XYZ",
   description:
-    "Easy to use React components for Tailwind CSS and Material Design.",
+    "Contáctanos en nuestras redes sociales.",
   socials: [
     {
       color: "blue",
@@ -114,6 +115,7 @@ Footer.defaultProps = {
       path: "https://github.com/creativetimofficial/material-tailwind",
     },
   ],
+  /*
   menus: [
     {
       name: "useful links",
@@ -151,13 +153,13 @@ Footer.defaultProps = {
         },
       ],
     },
-  ],
+  ],*/
   copyright: (
     <>
       Copyright © {year} Material Tailwind by{" "}
       <a
         href="https://www.creative-tim.com?ref=mtk"
-        target="_blank"
+        //target="_blank"
         className="text-blue-gray-500 transition-colors hover:text-blue-500"
       >
         Creative Tim
@@ -171,7 +173,7 @@ Footer.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   socials: PropTypes.arrayOf(PropTypes.object),
-  menus: PropTypes.arrayOf(PropTypes.object),
+  //menus: PropTypes.arrayOf(PropTypes.object),
   copyright: PropTypes.node,
 };
 
