@@ -15,6 +15,7 @@ export function SignIn() {
   return (
     <>
       <img
+        alt='Inicio sesión'
         src="/img/background-2.jpg"
         className="absolute inset-0 z-0 h-full w-full object-cover"
       />

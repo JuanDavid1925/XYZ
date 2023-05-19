@@ -4,13 +4,12 @@ import {
   CardBody,
   CardHeader,
   Typography,
-
 } from "@material-tailwind/react";
 import { UsersIcon } from "@heroicons/react/24/solid";
 import { PageTitle, Footer } from "../widgets/layout";
 import { FeatureCard, TeamCard } from "../widgets/cards";
 import { featuresData, teamData } from "../data";
-import Carousel from 'react-bootstrap/Carousel';
+import News from "../components/news";
 
 export function Landing_page() {
   return (
@@ -107,6 +106,7 @@ export function Landing_page() {
           <div className="mt-24 grid grid-cols-1 gap-12 gap-x-24 md:grid-cols-2 xl:grid-cols-4">
             {teamData.map(({ img }) => (
               <TeamCard
+                name=''
                 img={img}
               />
             ))}
@@ -118,55 +118,11 @@ export function Landing_page() {
           <PageTitle heading="Entérate de las últimas novedades.">
             Contamos con una sección de noticias para que estés enterado de las últimas ofertas y no te pierdas la oportunidad de tener tu viaje soñado.
           </PageTitle>
-          <div className="mx-auto mt-20 mb-48 grid max-w-5xl grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3">
-            {/*{contactData.map(({ title, icon, description }) => (
-              <Card
-                key={title}
-                color="transparent"
-                shadow={false}
-                className="text-center text-blue-gray-900"
-              >
-                <div className="mx-auto mb-6 grid h-14 w-14 place-items-center rounded-full bg-white shadow-lg shadow-gray-500/20">
-                  {React.createElement(icon, {
-                    className: "w-5 h-5",
-                  })}
-                </div>
-                <Typography variant="h5" color="blue-gray" className="mb-2">
-                  {title}
-                </Typography>
-                <Typography className="font-normal text-blue-gray-500">
-                  {description}
-                </Typography>
-              </Card>
-            ))}*/}
+          <div className="mx-auto mt-10 mb-48">
 
-            <Carousel>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src="holder.js/800x400?text=First slide&bg=373940"
-                  alt="First slide"
-                />
-                <Carousel.Caption>
-                  <h3>First slide label</h3>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src="holder.js/800x400?text=Second slide&bg=282c34"
-                  alt="Second slide"
-                />
+            <News />
 
-                <Carousel.Caption>
-                  <h3>Second slide label</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-            </Carousel>
           </div>
-
         </div>
       </section>
       <div className="bg-blue-gray-50/50">

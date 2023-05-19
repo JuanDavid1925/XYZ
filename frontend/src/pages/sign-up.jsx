@@ -15,6 +15,7 @@ export function SignUp() {
   return (
     <>
       <img
+        alt='Registro'
         src="/img/background-2.jpg"
         className="absolute inset-0 z-0 h-full w-full object-cover"
       />

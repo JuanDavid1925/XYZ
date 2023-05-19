@@ -1,7 +1,4 @@
 import {
-  //StarIcon,
-  //ArrowPathIcon,
-  //FingerPrintIcon,
   HandThumbUpIcon,
   CalendarDaysIcon,
   BuildingOffice2Icon,

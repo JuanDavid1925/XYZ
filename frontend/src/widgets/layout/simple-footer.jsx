@@ -13,7 +13,7 @@ export function SimpleFooter({ brandName, brandLink, routes }) {
           <HeartIcon className="-mt-0.5 inline-block h-3.5 w-3.5" /> by{" "}
           <a
             href={brandLink}
-            target="_blank"
+            //target="_blank"
             className="transition-colors hover:text-blue-500"
           >
             {brandName}
