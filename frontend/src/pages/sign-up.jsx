@@ -15,7 +15,8 @@ export function SignUp() {
   return (
     <>
       <img
-        src="/img/background-2.jpg"
+        alt='Registro'
+        src="/inicio y registro.jpg"
         className="absolute inset-0 z-0 h-full w-full object-cover"
       />
       <div className="absolute inset-0 z-0 h-full w-full bg-black/50" />
@@ -27,28 +28,40 @@ export function SignUp() {
             className="mb-4 grid h-28 place-items-center"
           >
             <Typography variant="h3" color="white">
-              Sign Up
+              Registrarse
             </Typography>
           </CardHeader>
           <CardBody className="flex flex-col gap-4">
-            <Input variant="standard" label="Name" size="lg" />
-            <Input variant="standard" type="email" label="Email" size="lg" />
+            <Input variant="standard" label="Correo electrónico" size="lg" />
+            <Input variant="standard" type="password" label="Contraseña" size="lg" />
             <Input
               variant="standard"
               type="password"
-              label="Password"
+              label="Confirmar contraseña"
               size="lg"
             />
             <div className="-ml-2.5">
-              <Checkbox label="I agree the Terms and Conditions" />
+              <Checkbox label="Acepto terminos y condiciones" />
             </div>
           </CardBody>
           <CardFooter className="pt-0">
             <Button variant="gradient" fullWidth>
-              Sign Up
+              Registrarse
             </Button>
+            <button className="flex flex-wrap justify-center w-full border border-gray-300 hover:border-gray-500 px-2 py-1.5 rounded-md">
+              <img className="w-5 mr-2"
+                alt="Google"
+                src="https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA" />
+              Registrarse con Google
+            </button>
+            <button className="flex flex-wrap justify-center w-full border border-gray-300 hover:border-gray-500 px-2 py-1.5 rounded-md">
+              <img className="w-5 mr-2"
+                alt="facebook"
+                src="https://www.facebook.com/images/fb_icon_325x325.png" />
+              Registrarse con Facebook
+            </button>
             <Typography variant="small" className="mt-6 flex justify-center">
-              Already have an account?
+              Ya tienes una cuenta?
               <Link to="/sign-in">
                 <Typography
                   as="span"
@@ -56,7 +69,7 @@ export function SignUp() {
                   color="blue"
                   className="ml-1 font-bold"
                 >
-                  Sign in
+                  Inicia sesión
                 </Typography>
               </Link>
             </Typography>
