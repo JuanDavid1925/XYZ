@@ -14,7 +14,7 @@ class UserManager(BaseUserManager):
             raise ValueError('User must have an password')
 
         user = self.model(
-            username = self.normalize_username(username)
+            username = username
         )
 
         user.set_password(password)
