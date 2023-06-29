@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { Navbar } from "../widgets/layout";
+import routes from "../routes";
 import {
   Card,
   CardHeader,
@@ -14,6 +16,9 @@ import { SimpleFooter } from "../widgets/layout";
 export function SignIn() {
   return (
     <>
+      <div className="container absolute left-2/4 z-10 mx-auto -translate-x-2/4 p-4">
+        <Navbar routes={routes} />
+      </div>
       <img
         alt='Inicio sesión'
         src="./inicio y registro.jpg"
@@ -44,9 +49,13 @@ export function SignIn() {
             </div>
           </CardBody>
           <CardFooter className="pt-0">
-            <Button variant="gradient" fullWidth>
-              Iniciar sesión
-            </Button>
+            <a
+              href="/Dashboard/Admin"
+            >
+              <Button variant="gradient" fullWidth href="/Dashboard/Admin">
+                Iniciar sesión
+              </Button>
+            </a>
             <button className="flex flex-wrap justify-center w-full border border-gray-300 hover:border-gray-500 px-2 py-1.5 rounded-md">
               <img className="w-5 mr-2"
                 alt="Google"

@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { Navbar } from "../widgets/layout";
+import routes from "../routes";
 import {
   Card,
   CardHeader,
@@ -14,6 +16,9 @@ import { SimpleFooter } from "../widgets/layout";
 export function SignUp() {
   return (
     <>
+      <div className="container absolute left-2/4 z-10 mx-auto -translate-x-2/4 p-4">
+        <Navbar routes={routes} />
+      </div>
       <img
         alt='Registro'
         src="/inicio y registro.jpg"

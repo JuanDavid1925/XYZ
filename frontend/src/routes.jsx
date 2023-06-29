@@ -1,4 +1,5 @@
-import { Landing_page, SignIn, SignUp } from "./pages";
+import { Landing_page, SignIn, SignUp, UserPage } from "./pages";
+import DashboardLayout from "./widgets/layout/dashboard"
 import {
   HomeIcon,
   ArrowRightOnRectangleIcon,
@@ -23,6 +24,18 @@ export const routes = [
     name: "Sign Up",
     path: "/sign-up",
     element: <SignUp />,
+  },
+  {
+    icon: UserPlusIcon,
+    name: "Dashboard Admin",
+    path: "/Dashboard/Admin",
+    element: <DashboardLayout />,
+  },
+  {
+    icon: UserPlusIcon,
+    name: "user list",
+    path: "/dashboard/user",
+    element: <UserPage />,
   },
 ];
 

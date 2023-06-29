@@ -1,4 +1,6 @@
 import React from "react";
+import { Navbar } from "../widgets/layout";
+import routes from "../routes";
 import {
   Card,
   CardBody,
@@ -14,6 +16,9 @@ import News from "../components/news";
 export function Landing_page() {
   return (
     <>
+      <div className="container absolute left-2/4 z-10 mx-auto -translate-x-2/4 p-4">
+        <Navbar routes={routes} />
+      </div>
       <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
         <div className="absolute top-0 h-full w-full bg-[url('https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')] bg-cover bg-center" />
         <div className="absolute top-0 h-full w-full bg-black/50 bg-cover bg-center" />
