@@ -40,7 +40,10 @@ export default function Router() {
 
       ],
     },
-
+    {
+      path: '*',
+      element: <Navigate to="/home" replace />,
+    },
   ]);
   return routes;
 }
