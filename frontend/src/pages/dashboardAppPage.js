@@ -8,6 +8,7 @@ import Iconify from '../components/iconify';
 import {
   AppWebsiteVisits,
   AppWidgetSummary,
+  AppConversionRates,
 
 } from '../sections/@dashboard/app';
 
@@ -76,7 +77,23 @@ export default function DashboardAppPage() {
             />
           </Grid>
 
-
+          <Grid item xs={12} md={6} lg={8}>
+            <AppConversionRates
+              title="Hoteles consultados"
+              chartData={[
+                { label: 'Burj Al Arab', value: 400 },
+                { label: 'The Peninsula ', value: 430 },
+                { label: 'Taj Mahal Palace', value: 448 },
+                { label: 'The Waldorf Astoria ', value: 470 },
+                { label: 'The Savoy ', value: 540 },
+                { label: 'Marina Bay Sands ', value: 580 },
+                { label: 'Hotel Ritz', value: 690 },
+                { label: 'The Ritz-Carlton ', value: 1100 },
+                { label: 'The Plaza Hotel', value: 1200 },
+                { label: 'Atlantis The Palm', value: 1380 },
+              ]}
+            />
+          </Grid>
 
 
 
