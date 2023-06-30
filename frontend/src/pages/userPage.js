@@ -1,5 +1,8 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { PencilIcon, UserPlusIcon } from "@heroicons/react/24/solid";
+import AddUser from "../components/modals/addUser";
+import EditUser from "../components/modals/editUser";
+import { useState } from 'react'
 import {
   Card,
   CardHeader,
@@ -61,6 +64,10 @@ const TABLE_ROWS = [
 ];
 
 export default function UserPage() {
+  const [showModal, setShowModal] = useState(false)
+  const handleClose = () => { setShowModal(false) }
+  const [showModal1, setShowModal1] = useState(false)
+  const handleClose1 = () => { setShowModal1(false) }
   return (
     <Card className="h-full w-full">
       <CardHeader floated={false} shadow={false} className="rounded-none">
@@ -74,10 +81,11 @@ export default function UserPage() {
             </Typography>
           </div>
           <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
-            <Button className="flex items-center gap-3" color="blue" size="sm">
+            <Button className="flex items-center gap-3" onClick={() => setShowModal(true)} color="blue" size="sm">
               <UserPlusIcon strokeWidth={2} className="h-4 w-4" /> Añadir usuario
             </Button>
           </div>
+          {showModal && <AddUser onClose={() => handleClose()}></AddUser>}
         </div>
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <div className="w-full md:w-72">
@@ -131,13 +139,6 @@ export default function UserPage() {
                       <Typography variant="small" color="blue-gray" className="font-normal">
                         {job}
                       </Typography>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal opacity-70"
-                      >
-                        {org}
-                      </Typography>
                     </div>
                   </td>
                   <td className={classes}>
@@ -152,11 +153,12 @@ export default function UserPage() {
                   </td>
                   <td className={classes}>
                     <Tooltip content="Editar usuario">
-                      <IconButton variant="text" color="blue-gray">
+                      <IconButton variant="text" onClick={() => setShowModal1(true)} color="blue-gray">
                         <PencilIcon className="h-4 w-4" />
                       </IconButton>
                     </Tooltip>
                   </td>
+                  {showModal1 && <EditUser onClose={() => handleClose1()}></EditUser>}
                 </tr>
               );
             })}

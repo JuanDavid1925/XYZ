@@ -1,6 +1,7 @@
 import { Landing_page, SignIn, SignUp } from "./pages";
 import DashboardLayout from "./widgets/layout/dashboard"
 import UserPage from "./pages/userPage";
+import DashboardAppPage from "./pages/dashboardAppPage";
 import {
   HomeIcon,
   ArrowRightOnRectangleIcon,
@@ -34,13 +35,16 @@ export default function Router() {
       path: "/dashboard/admin",
       element: <DashboardLayout />,
       children: [
-        { element: <Navigate to="/dashboard/admin" />, index: true },
-
+        { element: <Navigate to="/dashboard/admin/app" />, index: true },
+        { path: 'app', element: <DashboardAppPage /> },
         { path: 'user', element: <UserPage /> },
 
       ],
     },
-
+    {
+      path: '*',
+      element: <Navigate to="/home" replace />,
+    },
   ]);
   return routes;
 }
