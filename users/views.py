@@ -64,5 +64,13 @@ class UsersListView(generics.ListAPIView):
             #return Response(serializer.data)
 
 
+class ScrapingView(APIView):
+    permission_classes = (permissions.AllowAny,)
+    def get(self, request):
 
+        # Llamar a la función del scraping.
+
+        data = [] #datos del scraping.
+
+        return Response(data, status=status.HTTP_201_CREATED)
 
