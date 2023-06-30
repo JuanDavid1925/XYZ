@@ -50,7 +50,7 @@ export function SignIn() {
           </CardBody>
           <CardFooter className="pt-0">
             <a
-              href="/Dashboard/Admin"
+              href="/dashboard/admin"
             >
               <Button variant="gradient" fullWidth href="/Dashboard/Admin">
                 Iniciar sesión
