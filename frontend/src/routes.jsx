@@ -2,6 +2,7 @@ import { Landing_page, SignIn, SignUp } from "./pages";
 import DashboardLayout from "./widgets/layout/dashboard"
 import UserPage from "./pages/userPage";
 import DashboardAppPage from "./pages/dashboardAppPage";
+import DashboardUser from "./pages/dashboardUser";
 import {
   HomeIcon,
   ArrowRightOnRectangleIcon,
@@ -28,6 +29,12 @@ export default function Router() {
       name: "Sign Up",
       path: "/sign-up",
       element: <SignUp />,
+    },
+    {
+      icon: UserPlusIcon,
+      name: "dashboard user",
+      path: "/dashboard/user",
+      element: <DashboardUser />,
     },
     {
       icon: UserPlusIcon,

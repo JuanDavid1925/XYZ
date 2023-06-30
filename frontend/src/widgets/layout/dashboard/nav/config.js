@@ -21,11 +21,6 @@ const navConfig = [
     path: '/dashboard/noticias',
     icon: icon('ic_blog'),
   },
-  {
-    title: 'Reportes',
-    path: '/dashboard/reportes',
-    icon: icon('ic_cart'),
-  },
 ];
 
 export default navConfig;
