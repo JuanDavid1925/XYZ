@@ -3,8 +3,9 @@ from rest_framework import viewsets, permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.authentication import SessionAuthentication
-from .serializer import UserSerializer, UserRegisterSerializer, UserLoginSerializer
+from .serializer import UserSerializer, UserRegisterSerializer, UserLoginSerializer,UserListSerializer
 from .models import User
+from rest_framework import generics
 
 from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse
@@ -52,3 +53,16 @@ class LogoutView(APIView):
 	def post(self, request):
 		logout(request)
 		return Response(status=status.HTTP_200_OK)
+
+
+#lista usuarios
+
+class UsersListView(generics.ListAPIView):
+            #def get(self, request):
+            queryset = userModel.objects.all()
+            serializer_class = UserListSerializer
+            #return Response(serializer.data)
+
+
+
+
