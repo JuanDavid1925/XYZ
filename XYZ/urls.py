@@ -22,5 +22,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
     path('', TemplateView.as_view(template_name = 'index.html')),
-    path('home/', TemplateView.as_view(template_name = 'index.html'))
+    path('home/', TemplateView.as_view(template_name = 'index.html')),
+    path('sign-in/', TemplateView.as_view(template_name = 'index.html')),
+    path('sign-up/', TemplateView.as_view(template_name = 'index.html')),
+    path('dashboard/admin/', TemplateView.as_view(template_name = 'index.html')),
+    path('dashboard/admin/user/', TemplateView.as_view(template_name = 'index.html'))
 ]
